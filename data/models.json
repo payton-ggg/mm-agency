@@ -1,0 +1,198 @@
+[
+  {
+    "id": "model-001",
+    "name": "Alexandra Pierce",
+    "slug": "alexandra-pierce",
+    "category": "fashion",
+    "gender": "female",
+    "height": 178,
+    "age": 22,
+    "measurements": { "bust": 86, "waist": 61, "hips": 89 },
+    "experience": [
+      "Vogue Italia Cover",
+      "Paris Fashion Week 2025",
+      "Dior Campaign",
+      "Milan Fashion Week"
+    ],
+    "images": {
+      "hero": "/models/alexandra-hero.jpg",
+      "gallery": [
+        "/models/alexandra-1.jpg",
+        "/models/alexandra-2.jpg",
+        "/models/alexandra-3.jpg"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "id": "model-002",
+    "name": "Marcus Chen",
+    "slug": "marcus-chen",
+    "category": "commercial",
+    "gender": "male",
+    "height": 188,
+    "age": 25,
+    "measurements": { "chest": 98, "waist": 81, "hips": 95 },
+    "experience": [
+      "GQ Magazine",
+      "Calvin Klein Campaign",
+      "London Fashion Week",
+      "Nike Commercial"
+    ],
+    "images": {
+      "hero": "/models/marcus-hero.jpg",
+      "gallery": [
+        "/models/marcus-1.jpg",
+        "/models/marcus-2.jpg",
+        "/models/marcus-3.jpg"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "id": "model-003",
+    "name": "Sophia Laurent",
+    "slug": "sophia-laurent",
+    "category": "editorial",
+    "gender": "female",
+    "height": 175,
+    "age": 21,
+    "measurements": { "bust": 84, "waist": 60, "hips": 88 },
+    "experience": [
+      "Harper's Bazaar",
+      "Chanel Runway",
+      "Vogue Paris",
+      "Met Gala"
+    ],
+    "images": {
+      "hero": "/models/sophia-hero.jpg",
+      "gallery": [
+        "/models/sophia-1.jpg",
+        "/models/sophia-2.jpg",
+        "/models/sophia-3.jpg"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "id": "model-004",
+    "name": "Kai Rodriguez",
+    "slug": "kai-rodriguez",
+    "category": "fashion",
+    "gender": "male",
+    "height": 185,
+    "age": 23,
+    "measurements": { "chest": 96, "waist": 79, "hips": 92 },
+    "experience": [
+      "Versace Campaign",
+      "New York Fashion Week",
+      "Esquire Cover",
+      "Gucci Runway"
+    ],
+    "images": {
+      "hero": "/models/kai-hero.jpg",
+      "gallery": ["/models/kai-1.jpg", "/models/kai-2.jpg", "/models/kai-3.jpg"]
+    },
+    "featured": true
+  },
+  {
+    "id": "model-005",
+    "name": "Lena Volkov",
+    "slug": "lena-volkov",
+    "category": "fashion",
+    "gender": "female",
+    "height": 180,
+    "age": 24,
+    "measurements": { "bust": 88, "waist": 62, "hips": 90 },
+    "experience": [
+      "Prada Campaign",
+      "Vogue Cover",
+      "Cannes Film Festival",
+      "Balmain Runway"
+    ],
+    "images": {
+      "hero": "/models/lena-hero.jpg",
+      "gallery": [
+        "/models/lena-1.jpg",
+        "/models/lena-2.jpg",
+        "/models/lena-3.jpg"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "id": "model-006",
+    "name": "Ethan Blake",
+    "slug": "ethan-blake",
+    "category": "commercial",
+    "gender": "male",
+    "height": 190,
+    "age": 26,
+    "measurements": { "chest": 102, "waist": 84, "hips": 98 },
+    "experience": [
+      "Hugo Boss Campaign",
+      "Men's Health Cover",
+      "Tommy Hilfiger",
+      "Barcelona Fashion Week"
+    ],
+    "images": {
+      "hero": "/models/ethan-hero.jpg",
+      "gallery": [
+        "/models/ethan-1.jpg",
+        "/models/ethan-2.jpg",
+        "/models/ethan-3.jpg"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "id": "model-007",
+    "name": "Zara Kim",
+    "slug": "zara-kim",
+    "category": "editorial",
+    "gender": "female",
+    "height": 176,
+    "age": 20,
+    "measurements": { "bust": 82, "waist": 58, "hips": 86 },
+    "experience": [
+      "Elle Magazine",
+      "Seoul Fashion Week",
+      "Burberry Campaign",
+      "Tokyo Fashion Week"
+    ],
+    "images": {
+      "hero": "/models/zara-hero.jpg",
+      "gallery": [
+        "/models/zara-1.jpg",
+        "/models/zara-2.jpg",
+        "/models/zara-3.jpg"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "id": "model-008",
+    "name": "Lucas Morrison",
+    "slug": "lucas-morrison",
+    "category": "fashion",
+    "gender": "male",
+    "height": 186,
+    "age": 24,
+    "measurements": { "chest": 94, "waist": 78, "hips": 91 },
+    "experience": [
+      "Saint Laurent",
+      "L'Homme Vogue",
+      "Paris Fashion Week",
+      "Armani Campaign"
+    ],
+    "images": {
+      "hero": "/models/lucas-hero.jpg",
+      "gallery": [
+        "/models/lucas-1.jpg",
+        "/models/lucas-2.jpg",
+        "/models/lucas-3.jpg"
+      ]
+    },
+    "featured": true
+  }
+]
