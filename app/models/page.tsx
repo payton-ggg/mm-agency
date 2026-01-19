@@ -16,17 +16,19 @@ export default function ModelsPage() {
     <>
       <Navigation />
 
-      <main className="min-h-screen pt-24">
-        <div className="max-w-7xl mx-auto px-6 py-12">
-          <div className="mb-12">
-            <h1 className="mb-4">Our Models</h1>
-            <p className="text-xl text-gray-light">
-              Elite talent for fashion, commercial, and editorial projects
-            </p>
-          </div>
+      <main className="min-h-screen pt-20">
+        <section className="py-16 px-6">
+          <div className="max-w-7xl mx-auto">
+            <div className="mb-10 text-center md:text-left">
+              <h1 className="mb-3">Our Models</h1>
+              <p className="text-lg text-gray-light">
+                Elite talent for fashion, commercial, and editorial projects
+              </p>
+            </div>
 
-          <ModelGrid models={models} />
-        </div>
+            <ModelGrid models={models} />
+          </div>
+        </section>
       </main>
 
       <Footer />

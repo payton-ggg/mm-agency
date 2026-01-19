@@ -13,25 +13,25 @@ export default function ForModelsPage() {
     <>
       <Navigation />
 
-      <main className="min-h-screen pt-24">
+      <main className="min-h-screen pt-20">
         {/* Hero */}
-        <section className="py-20 px-6 bg-gradient-red">
+        <section className="py-16 px-6 bg-gradient-red">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="mb-6">Join Our Agency</h1>
-            <p className="text-xl text-gray-light">
+            <h1 className="mb-4">Join Our Agency</h1>
+            <p className="text-lg md:text-xl text-gray-light">
               Elevate your modeling career with elite representation
             </p>
           </div>
         </section>
 
         {/* Requirements */}
-        <section className="py-20 px-6">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="mb-12">Requirements</h2>
-            <div className="grid md:grid-cols-2 gap-8">
+        <section className="py-16 px-6">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="mb-10">Requirements</h2>
+            <div className="grid md:grid-cols-2 gap-8 md:gap-12">
               <div>
-                <h3 className="mb-4 text-red-light">Female Models</h3>
-                <ul className="space-y-3 text-gray-light">
+                <h3 className="mb-4 text-red-light text-xl">Female Models</h3>
+                <ul className="space-y-2 text-gray-light">
                   <li className="flex items-start">
                     <span className="text-red-light mr-2">•</span>
                     Height: 172-180 cm
@@ -51,8 +51,8 @@ export default function ForModelsPage() {
                 </ul>
               </div>
               <div>
-                <h3 className="mb-4 text-red-light">Male Models</h3>
-                <ul className="space-y-3 text-gray-light">
+                <h3 className="mb-4 text-red-light text-xl">Male Models</h3>
+                <ul className="space-y-2 text-gray-light">
                   <li className="flex items-start">
                     <span className="text-red-light mr-2">•</span>
                     Height: 183-193 cm
@@ -76,27 +76,31 @@ export default function ForModelsPage() {
         </section>
 
         {/* Benefits */}
-        <section className="py-20 px-6 bg-black-graphite">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="mb-12">Why Join Elite</h2>
-            <div className="grid md:grid-cols-3 gap-8">
+        <section className="py-16 px-6 bg-black-graphite">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="mb-10">Why Join Elite</h2>
+            <div className="grid md:grid-cols-3 gap-6 md:gap-8">
               <div>
-                <h4 className="mb-3 text-red-light">Professional Management</h4>
-                <p className="text-gray-light">
+                <h4 className="mb-2 text-red-light text-lg">
+                  Professional Management
+                </h4>
+                <p className="text-gray-light text-base">
                   Dedicated agents managing your bookings, contracts, and career
                   growth
                 </p>
               </div>
               <div>
-                <h4 className="mb-3 text-red-light">Global Exposure</h4>
-                <p className="text-gray-light">
+                <h4 className="mb-2 text-red-light text-lg">Global Exposure</h4>
+                <p className="text-gray-light text-base">
                   Access to international fashion weeks, campaigns, and
                   editorial work
                 </p>
               </div>
               <div>
-                <h4 className="mb-3 text-red-light">Industry Connections</h4>
-                <p className="text-gray-light">
+                <h4 className="mb-2 text-red-light text-lg">
+                  Industry Connections
+                </h4>
+                <p className="text-gray-light text-base">
                   Direct relationships with top brands, photographers, and
                   casting directors
                 </p>
@@ -106,15 +110,15 @@ export default function ForModelsPage() {
         </section>
 
         {/* Application Form */}
-        <section className="py-20 px-6">
+        <section className="py-16 px-6">
           <div className="max-w-2xl mx-auto">
-            <h2 className="mb-8">Apply Now</h2>
-            <form className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
+            <h2 className="mb-6">Apply Now</h2>
+            <form className="space-y-5">
+              <div className="grid md:grid-cols-2 gap-5">
                 <Input label="Full Name" type="text" required />
                 <Input label="Email" type="email" required />
               </div>
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid md:grid-cols-3 gap-5">
                 <Input label="Age" type="number" required />
                 <Input label="Height (cm)" type="number" required />
                 <Input label="Phone" type="tel" />
@@ -148,16 +152,18 @@ export default function ForModelsPage() {
               <Textarea
                 label="Tell Us About Yourself"
                 placeholder="Previous experience, interests, goals..."
-                rows={5}
+                rows={4}
               />
 
-              <Button
-                variant="primary"
-                type="submit"
-                className="w-full md:w-auto"
-              >
-                Submit Application
-              </Button>
+              <div className="pt-2">
+                <Button
+                  variant="primary"
+                  type="submit"
+                  className="w-full md:w-auto"
+                >
+                  Submit Application
+                </Button>
+              </div>
             </form>
           </div>
         </section>

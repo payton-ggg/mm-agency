@@ -24,14 +24,14 @@ export const Hero: React.FC = () => {
         </h1>
 
         <p
-          className="text-xl md:text-2xl text-gray-light max-w-2xl animate-fade-in-up"
+          className="text-lg md:text-xl text-gray-light max-w-2xl animate-fade-in-up mb-8"
           style={{ animationDelay: "0.2s" }}
         >
           Elite representation for the world's most compelling talent
         </p>
 
         <div
-          className="flex flex-col sm:flex-row gap-4 mt-4 animate-fade-in-up"
+          className="flex flex-col sm:flex-row gap-4 animate-fade-in-up"
           style={{ animationDelay: "0.4s" }}
         >
           <Button variant="primary" href="/models">

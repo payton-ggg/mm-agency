@@ -14,48 +14,48 @@ export default function ForBrandsPage() {
     <>
       <Navigation />
 
-      <main className="min-h-screen pt-24">
+      <main className="min-h-screen pt-20">
         {/* Hero */}
-        <section className="py-20 px-6 bg-gradient-red">
+        <section className="py-16 px-6 bg-gradient-red">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="mb-6">Partner With Elite Talent</h1>
-            <p className="text-xl text-gray-light">
+            <h1 className="mb-4">Partner With Elite Talent</h1>
+            <p className="text-lg md:text-xl text-gray-light">
               Access our roster of world-class models for your next campaign
             </p>
           </div>
         </section>
 
         {/* How It Works */}
-        <section className="py-20 px-6">
+        <section className="py-16 px-6">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-center mb-16">How It Works</h2>
-            <div className="grid md:grid-cols-3 gap-12">
+            <h2 className="text-center mb-12">How It Works</h2>
+            <div className="grid md:grid-cols-3 gap-8 md:gap-12">
               <div className="text-center group">
-                <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center text-4xl font-bold text-red-light border-2 border-red-glow group-hover:shadow-[0_0_30px_hsla(0,100%,50%,0.5)] transition-all duration-300">
+                <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center text-3xl font-bold text-red-light border-2 border-red-glow group-hover:shadow-[0_0_30px_hsla(0,100%,50%,0.5)] transition-all duration-300">
                   1
                 </div>
-                <h3 className="mb-4">Browse Our Models</h3>
-                <p className="text-gray-light">
+                <h3 className="mb-3 text-xl">Browse Our Models</h3>
+                <p className="text-gray-light text-base">
                   Explore our diverse roster of fashion, commercial, and
                   editorial models
                 </p>
               </div>
               <div className="text-center group">
-                <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center text-4xl font-bold text-red-light border-2 border-red-glow group-hover:shadow-[0_0_30px_hsla(0,100%,50%,0.5)] transition-all duration-300">
+                <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center text-3xl font-bold text-red-light border-2 border-red-glow group-hover:shadow-[0_0_30px_hsla(0,100%,50%,0.5)] transition-all duration-300">
                   2
                 </div>
-                <h3 className="mb-4">Submit Your Request</h3>
-                <p className="text-gray-light">
+                <h3 className="mb-3 text-xl">Submit Your Request</h3>
+                <p className="text-gray-light text-base">
                   Fill out our booking form with your project details and
                   requirements
                 </p>
               </div>
               <div className="text-center group">
-                <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center text-4xl font-bold text-red-light border-2 border-red-glow group-hover:shadow-[0_0_30px_hsla(0,100%,50%,0.5)] transition-all duration-300">
+                <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center text-3xl font-bold text-red-light border-2 border-red-glow group-hover:shadow-[0_0_30px_hsla(0,100%,50%,0.5)] transition-all duration-300">
                   3
                 </div>
-                <h3 className="mb-4">We Connect You</h3>
-                <p className="text-gray-light">
+                <h3 className="mb-3 text-xl">We Connect You</h3>
+                <p className="text-gray-light text-base">
                   Our team facilitates the booking and manages all professional
                   details
                 </p>
@@ -65,15 +65,15 @@ export default function ForBrandsPage() {
         </section>
 
         {/* Booking Form */}
-        <section className="py-20 px-6 bg-black-graphite">
+        <section className="py-16 px-6 bg-black-graphite">
           <div className="max-w-2xl mx-auto">
-            <h2 className="mb-8">Request a Booking</h2>
-            <form className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
+            <h2 className="mb-6">Request a Booking</h2>
+            <form className="space-y-5">
+              <div className="grid md:grid-cols-2 gap-5">
                 <Input label="Company Name" type="text" required />
                 <Input label="Contact Name" type="text" required />
               </div>
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-2 gap-5">
                 <Input label="Email" type="email" required />
                 <Input label="Phone" type="tel" />
               </div>
@@ -85,15 +85,17 @@ export default function ForBrandsPage() {
               <Textarea
                 label="Project Details"
                 placeholder="Tell us about your project, dates, and requirements..."
-                rows={6}
+                rows={5}
               />
-              <Button
-                variant="primary"
-                type="submit"
-                className="w-full md:w-auto"
-              >
-                Submit Request
-              </Button>
+              <div className="pt-2">
+                <Button
+                  variant="primary"
+                  type="submit"
+                  className="w-full md:w-auto"
+                >
+                  Submit Request
+                </Button>
+              </div>
             </form>
           </div>
         </section>

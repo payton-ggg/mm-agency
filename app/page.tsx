@@ -19,7 +19,7 @@ export default function Home() {
         <Hero />
 
         {/* About Section */}
-        <section className="py-20 px-6 bg-black-graphite">
+        <section className="py-16 px-6 bg-black-graphite">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="mb-6">Elite Representation</h2>
             <p className="text-lg text-gray-light leading-relaxed">
@@ -31,9 +31,9 @@ export default function Home() {
         </section>
 
         {/* Featured Models */}
-        <section className="py-20 px-6">
+        <section className="py-16 px-6">
           <div className="max-w-7xl mx-auto">
-            <div className="flex items-center justify-between mb-12">
+            <div className="flex items-center justify-between mb-10">
               <h2>Featured Models</h2>
               <Button variant="ghost" href="/models">
                 View All
@@ -44,14 +44,14 @@ export default function Home() {
         </section>
 
         {/* For Brands & For Models */}
-        <section className="py-20 px-6 bg-black-graphite">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
+        <section className="py-16 px-6 bg-black-graphite">
+          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
             {/* For Brands */}
-            <div className="p-8 bg-black-deep border border-gray-mid/20 hover:border-red-glow transition-all duration-500 group">
-              <h3 className="mb-4 group-hover:text-red-light transition-colors">
+            <div className="p-6 md:p-8 bg-black-deep border border-gray-mid/20 hover:border-red-glow transition-all duration-500 group">
+              <h3 className="mb-3 group-hover:text-red-light transition-colors text-2xl">
                 For Brands
               </h3>
-              <p className="text-gray-light mb-6">
+              <p className="text-gray-light mb-5 text-base">
                 Book elite talent for your campaigns, runway shows, and
                 commercial projects. Access our roster of professional models
                 with proven portfolios.
@@ -62,11 +62,11 @@ export default function Home() {
             </div>
 
             {/* For Models */}
-            <div className="p-8 bg-black-deep border border-gray-mid/20 hover:border-red-glow transition-all duration-500 group">
-              <h3 className="mb-4 group-hover:text-red-light transition-colors">
+            <div className="p-6 md:p-8 bg-black-deep border border-gray-mid/20 hover:border-red-glow transition-all duration-500 group">
+              <h3 className="mb-3 group-hover:text-red-light transition-colors text-2xl">
                 For Models
               </h3>
-              <p className="text-gray-light mb-6">
+              <p className="text-gray-light mb-5 text-base">
                 Join our agency and elevate your career. We provide professional
                 representation, industry connections, and exposure to top-tier
                 brands worldwide.

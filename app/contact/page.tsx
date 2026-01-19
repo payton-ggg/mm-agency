@@ -14,32 +14,32 @@ export default function ContactPage() {
     <>
       <Navigation />
 
-      <main className="min-h-screen pt-24">
+      <main className="min-h-screen pt-20">
         {/* Hero */}
-        <section className="py-20 px-6 bg-gradient-red">
+        <section className="py-16 px-6 bg-gradient-red">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="mb-6">Get In Touch</h1>
-            <p className="text-xl text-gray-light">
+            <h1 className="mb-4">Get In Touch</h1>
+            <p className="text-lg md:text-xl text-gray-light">
               We're here to answer your questions and discuss opportunities
             </p>
           </div>
         </section>
 
         {/* Contact Content */}
-        <section className="py-20 px-6">
-          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16">
+        <section className="py-16 px-6">
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
             {/* Contact Info */}
             <div>
-              <h2 className="mb-8">Contact Information</h2>
+              <h2 className="mb-6">Contact Information</h2>
 
-              <div className="space-y-6 mb-12">
+              <div className="space-y-5 mb-10">
                 <div>
                   <h4 className="text-sm uppercase text-gray-light mb-2">
                     Email
                   </h4>
                   <a
                     href="mailto:contact@elitemodels.com"
-                    className="text-xl hover:text-red-light transition-colors"
+                    className="text-lg hover:text-red-light transition-colors"
                   >
                     contact@elitemodels.com
                   </a>
@@ -51,7 +51,7 @@ export default function ContactPage() {
                   </h4>
                   <a
                     href="tel:+1234567890"
-                    className="text-xl hover:text-red-light transition-colors"
+                    className="text-lg hover:text-red-light transition-colors"
                   >
                     +1 (234) 567-890
                   </a>
@@ -61,7 +61,7 @@ export default function ContactPage() {
                   <h4 className="text-sm uppercase text-gray-light mb-2">
                     Office Hours
                   </h4>
-                  <p className="text-white-off">
+                  <p className="text-white-off text-base">
                     Monday - Friday: 9:00 AM - 6:00 PM
                     <br />
                     Saturday: 10:00 AM - 2:00 PM
@@ -70,10 +70,10 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <h4 className="text-sm uppercase text-gray-light mb-4">
+                <h4 className="text-sm uppercase text-gray-light mb-3">
                   Follow Us
                 </h4>
-                <div className="flex gap-4">
+                <div className="flex gap-3">
                   <a
                     href="#"
                     className="w-12 h-12 flex items-center justify-center border border-gray-mid hover:border-red-glow hover:text-red-light transition-all"
@@ -106,20 +106,22 @@ export default function ContactPage() {
 
             {/* Contact Form */}
             <div>
-              <h2 className="mb-8">Send a Message</h2>
-              <form className="space-y-6">
+              <h2 className="mb-6">Send a Message</h2>
+              <form className="space-y-5">
                 <Input label="Name" type="text" required />
                 <Input label="Email" type="email" required />
                 <Input label="Subject" type="text" />
                 <Textarea
                   label="Message"
                   placeholder="How can we help you?"
-                  rows={6}
+                  rows={5}
                   required
                 />
-                <Button variant="primary" type="submit">
-                  Send Message
-                </Button>
+                <div className="pt-2">
+                  <Button variant="primary" type="submit">
+                    Send Message
+                  </Button>
+                </div>
               </form>
             </div>
           </div>

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import modelsData from "@/data/models.json";
 import { Model } from "@/data/types";
 import { notFound } from "next/navigation";
+import React from "react";
 
 export async function generateStaticParams() {
   const models = modelsData as Model[];
@@ -15,10 +16,11 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
+  const { slug } = await params;
   const models = modelsData as Model[];
-  const model = models.find((m) => m.slug === params.slug);
+  const model = models.find((m) => m.slug === slug);
 
   if (!model) {
     return {
@@ -32,13 +34,14 @@ export async function generateMetadata({
   };
 }
 
-export default function ModelProfilePage({
+export default async function ModelProfilePage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
+  const { slug } = await params;
   const models = modelsData as Model[];
-  const model = models.find((m) => m.slug === params.slug);
+  const model = models.find((m) => m.slug === slug);
 
   if (!model) {
     notFound();
