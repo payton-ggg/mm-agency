@@ -35,16 +35,18 @@ const models = [
 
 export default function FeaturedModels() {
   return (
-    <section className="py-24 px-6 md:px-12 bg-white text-black">
+    <section className="py-24 px-6 md:px-12 bg-brand-neutral text-brand-primary border-b border-brand-primary/5">
       <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-end mb-16">
+        <div className="flex justify-between items-end mb-16 border-b border-brand-primary/10 pb-12">
           <div>
-            <span className="text-xs uppercase tracking-[0.3em] text-gray-400 mb-4 block">
+            <span className="text-xs uppercase tracking-[0.3em] text-brand-primary/40 mb-4 block">
               Portfolio
             </span>
-            <h2 className="text-4xl md:text-5xl font-serif">Featured Faces</h2>
+            <h2 className="text-4xl md:text-5xl font-serif text-brand-primary">
+              Featured Faces
+            </h2>
           </div>
-          <button className="text-xs uppercase tracking-widest border-b border-black pb-1 hover:text-gray-500 hover:border-gray-500 transition-colors">
+          <button className="text-xs uppercase tracking-widest border-b border-brand-accent-hard pb-1 hover:text-brand-accent-hard/70 transition-colors text-brand-primary">
             View All Talent
           </button>
         </div>
@@ -52,17 +54,19 @@ export default function FeaturedModels() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {models.map((model) => (
             <div key={model.id} className="group cursor-pointer">
-              <div className="relative aspect-3/4 overflow-hidden mb-4">
+              <div className="relative aspect-3/4 overflow-hidden mb-4 rounded-sm">
                 <Image
                   src={model.image}
                   alt={model.name}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110 grayscale hover:grayscale-0"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
                 />
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-brand-primary/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
-              <h3 className="text-lg font-medium">{model.name}</h3>
-              <p className="text-xs text-gray-500 uppercase tracking-widest">
+              <h3 className="text-lg font-medium group-hover:text-brand-accent-hard transition-colors text-brand-primary">
+                {model.name}
+              </h3>
+              <p className="text-xs text-brand-primary/50 uppercase tracking-widest">
                 {model.category}
               </p>
             </div>

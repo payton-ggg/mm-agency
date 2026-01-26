@@ -5,17 +5,20 @@ html {
 }
 
 @theme {
-  --color-brand-black: #080808;
-  --color-brand-white: #ffffff;
-  --color-brand-gray: #a1a1a1;
+  --color-brand-primary: #006d77;
+  --color-brand-secondary: #83c5be;
+  --color-brand-neutral: #edf6f9;
+  --color-brand-accent-soft: #ffddd2;
+  --color-brand-accent-hard: #e29578;
 
   --font-serif: "Playfair Display", serif;
   --font-sans: var(--font-inter);
 }
 
 :root {
-  --background: #080808;
-  --foreground: #ffffff;
+  --background: #edf6f9;
+  --foreground: #38c0cd;
+  --accent: #e29578;
 }
 
 body {
@@ -25,26 +28,26 @@ body {
 }
 
 ::selection {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: var(--color-brand-secondary);
+  color: #ffffff;
 }
 
-/* Custom scrollbar for premium feel */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #080808;
+  background: var(--color-brand-neutral);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #333;
+  background: var(--color-brand-primary);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: var(--color-brand-accent-hard);
 }
 
 @layer base {
