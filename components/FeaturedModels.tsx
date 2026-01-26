@@ -35,18 +35,18 @@ const models = [
 
 export default function FeaturedModels() {
   return (
-    <section className="py-24 px-6 md:px-12 bg-brand-neutral text-brand-primary border-b border-brand-primary/5">
+    <section className="py-24 px-6 md:px-12 bg-brand-bg text-brand-text border-b border-brand-primary/5">
       <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-end mb-16 border-b border-brand-primary/10 pb-12">
+        <div className="flex justify-between items-end mb-16 border-b border-brand-primary/5 pb-12">
           <div>
-            <span className="text-xs uppercase tracking-[0.3em] text-brand-primary/40 mb-4 block">
+            <span className="text-xs uppercase tracking-[0.3em] text-brand-muted mb-4 block">
               Portfolio
             </span>
-            <h2 className="text-4xl md:text-5xl font-serif text-brand-primary">
+            <h2 className="text-4xl md:text-5xl font-serif text-brand-text">
               Featured Faces
             </h2>
           </div>
-          <button className="text-xs uppercase tracking-widest border-b border-brand-accent-hard pb-1 hover:text-brand-accent-hard/70 transition-colors text-brand-primary">
+          <button className="text-xs uppercase tracking-widest border-b border-brand-primary pb-1 hover:text-brand-primary/70 transition-colors text-brand-text">
             View All Talent
           </button>
         </div>
@@ -61,12 +61,12 @@ export default function FeaturedModels() {
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
                 />
-                <div className="absolute inset-0 bg-brand-primary/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-brand-bg/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
-              <h3 className="text-lg font-medium group-hover:text-brand-accent-hard transition-colors text-brand-primary">
+              <h3 className="text-lg font-medium group-hover:text-brand-primary transition-colors text-brand-text">
                 {model.name}
               </h3>
-              <p className="text-xs text-brand-primary/50 uppercase tracking-widest">
+              <p className="text-xs text-brand-muted uppercase tracking-widest">
                 {model.category}
               </p>
             </div>

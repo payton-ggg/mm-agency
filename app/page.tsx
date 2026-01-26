@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-brand-neutral">
+    <main className="min-h-screen bg-brand-bg">
       <Navbar />
       <Hero />
       <AboutUs />
@@ -15,19 +15,19 @@ export default function Home() {
       <FeaturedModels />
 
       {/* Secondary CTA Section */}
-      <section className="py-24 px-6 md:px-12 bg-brand-accent-soft/20 text-brand-primary flex justify-center items-center overflow-hidden relative border-t border-brand-primary/5">
+      <section className="py-24 px-6 md:px-12 bg-[#121212] text-brand-text flex justify-center items-center overflow-hidden relative border-y border-brand-primary/5">
         {/* Background decorative blob */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-brand-accent-hard/20 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-brand-primary/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
 
         <div className="max-w-4xl text-center relative z-10">
-          <h2 className="text-4xl md:text-6xl font-serif mb-8 text-brand-primary">
+          <h2 className="text-4xl md:text-6xl font-serif mb-8 text-brand-text">
             Ready to make your mark?
           </h2>
-          <p className="text-brand-primary/60 mb-12 max-w-xl mx-auto font-light">
+          <p className="text-brand-muted mb-12 max-w-xl mx-auto font-light">
             We are always looking for fresh faces. Submit your portfolio to join
             our global network of elite talent.
           </p>
-          <button className="bg-brand-accent-hard text-white font-bold px-12 py-5 rounded-none uppercase tracking-widest text-sm hover:bg-brand-primary transition-all duration-300 shadow-lg shadow-brand-accent-hard/20">
+          <button className="bg-brand-primary text-brand-bg font-bold px-12 py-5 rounded-none uppercase tracking-widest text-sm hover:bg-brand-accent transition-all duration-300 shadow-xl shadow-brand-primary/10">
             Apply to Agency
           </button>
         </div>
