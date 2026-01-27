@@ -6,11 +6,23 @@ import { useEffect, useState } from "react";
 export default function Hero() {
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-white">
+      {/* Mesmerizing Iridescent & Shimmer Background */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 shimmer-bg opacity-50" />
+
+        {/* Dark Circular Blurs on Edges */}
+        <div className="absolute top-1/2 -left-[10%] w-[40vw] h-[40vw] -translate-y-1/2 bg-black/5 rounded-full blur-[120px] animate-blob-float-left" />
+        <div className="absolute top-1/2 -right-[10%] w-[40vw] h-[40vw] -translate-y-1/2 bg-black/5 rounded-full blur-[120px] animate-blob-float-right" />
+
+        {/* Subtle Pearl Shimmer */}
+        <div className="absolute top-1/4 left-1/3 w-[30vw] h-[30vw] bg-brand-accent/40 rounded-full blur-[100px] animate-shimmer-1" />
+      </div>
+
       {/* Content */}
       <div className="relative z-10 text-center px-4">
         <div className="relative inline-block">
           <h1
-            className={`text-7xl md:text-[12rem] font-serif leading-none tracking-tight transition-all duration-75`}
+            className={`text-7xl md:text-[12rem] font-serif leading-none tracking-tight transition-all duration-75 text-brand-text`}
           >
             linea<span className="italic font-light">12</span>
           </h1>
@@ -42,14 +54,14 @@ export default function Hero() {
       <style jsx>{`
         .shimmer-bg {
           background: linear-gradient(
-            120deg,
-            #ffffff 0%,
-            #fafaf9 25%,
-            #f5f5f4 50%,
-            #fafaf9 75%,
-            #ffffff 100%
+            -45deg,
+            #ffffff,
+            #fdfcfb,
+            #f5f1e8,
+            #fafaf9,
+            #ffffff
           );
-          background-size: 200% 200%;
+          background-size: 400% 400%;
           animation: gradient-flow 15s ease infinite;
         }
 
@@ -65,39 +77,35 @@ export default function Hero() {
           }
         }
 
+        @keyframes blob-float-left {
+          0%,
+          100% {
+            transform: translate(0, -50%) scale(1);
+          }
+          50% {
+            transform: translate(5%, -45%) scale(1.1);
+          }
+        }
+
+        @keyframes blob-float-right {
+          0%,
+          100% {
+            transform: translate(0, -50%) scale(1.1);
+          }
+          50% {
+            transform: translate(-5%, -55%) scale(1);
+          }
+        }
+
         @keyframes shimmer-1 {
           0%,
           100% {
             transform: translate(0, 0) scale(1);
-          }
-          33% {
-            transform: translate(10%, 15%) scale(1.1);
-          }
-          66% {
-            transform: translate(-5%, 10%) scale(0.9);
-          }
-        }
-
-        @keyframes shimmer-2 {
-          0%,
-          100% {
-            transform: translate(0, 0) scale(1);
-          }
-          33% {
-            transform: translate(-15%, -10%) scale(1.05);
-          }
-          66% {
-            transform: translate(10%, -15%) scale(0.95);
-          }
-        }
-
-        @keyframes shimmer-3 {
-          0%,
-          100% {
-            transform: translate(0, 0) rotate(0deg);
+            opacity: 0.4;
           }
           50% {
-            transform: translate(20%, 10%) rotate(180deg);
+            transform: translate(-10%, 10%) scale(1.2);
+            opacity: 0.6;
           }
         }
 
@@ -109,48 +117,6 @@ export default function Hero() {
           to {
             opacity: 1;
             transform: translateY(0);
-          }
-        }
-
-        @keyframes glitch-1 {
-          0% {
-            clip-path: inset(20% 0 30% 0);
-          }
-          20% {
-            clip-path: inset(60% 0 10% 0);
-          }
-          40% {
-            clip-path: inset(40% 0 50% 0);
-          }
-          60% {
-            clip-path: inset(10% 0 70% 0);
-          }
-          80% {
-            clip-path: inset(80% 0 5% 0);
-          }
-          100% {
-            clip-path: inset(30% 0 40% 0);
-          }
-        }
-
-        @keyframes glitch-2 {
-          0% {
-            clip-path: inset(15% 0 35% 0);
-          }
-          20% {
-            clip-path: inset(55% 0 15% 0);
-          }
-          40% {
-            clip-path: inset(35% 0 45% 0);
-          }
-          60% {
-            clip-path: inset(5% 0 65% 0);
-          }
-          80% {
-            clip-path: inset(75% 0 10% 0);
-          }
-          100% {
-            clip-path: inset(25% 0 35% 0);
           }
         }
       `}</style>
