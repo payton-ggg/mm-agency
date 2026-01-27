@@ -21,6 +21,9 @@ export default function Hero() {
           className="absolute bottom-[10%] right-[20%] w-[30vw] h-[30vw] bg-brand-primary/5 rounded-full blur-[120px] animate-pulse-slow"
           style={{ animationDelay: "2s" }}
         />
+
+        {/* Smooth Fade-out Mask at the bottom */}
+        <div className="absolute inset-x-0 bottom-0 h-64 bg-linear-to-t from-white via-white/80 to-transparent pointer-events-none" />
       </div>
 
       {/* Content */}
