@@ -35,40 +35,51 @@ const models = [
 
 export default function FeaturedModels() {
   return (
-    <section className="py-24 px-6 md:px-12 bg-brand-bg text-brand-text border-b border-brand-primary/5">
+    <section className="py-32 px-6 md:px-12 bg-white text-brand-text">
       <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-end mb-16 border-b border-brand-primary/5 pb-12">
-          <div>
-            <span className="text-xs uppercase tracking-[0.3em] text-brand-muted mb-4 block">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+          <div className="max-w-xl">
+            <span className="text-[10px] uppercase tracking-[0.5em] text-brand-primary mb-4 block font-medium">
               Portfolio
             </span>
-            <h2 className="text-4xl md:text-5xl font-serif text-brand-text">
-              Featured Faces
+            <h2 className="text-4xl md:text-6xl font-serif text-brand-text leading-tight">
+              Featured <span className="italic font-light">Faces</span>
             </h2>
+            <p className="mt-6 text-brand-muted font-light leading-loose text-sm">
+              Discover our diverse roster of exceptional talent, chosen for
+              their unique presence and professional excellence.
+            </p>
           </div>
-          <button className="text-xs uppercase tracking-widest border-b border-brand-primary pb-1 hover:text-brand-primary/70 transition-colors text-brand-text">
+          <button className="text-[10px] uppercase tracking-[0.3em] font-medium border-b border-brand-primary/30 pb-2 hover:border-brand-primary transition-all duration-300 text-brand-text">
             View All Talent
           </button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
           {models.map((model) => (
             <div key={model.id} className="group cursor-pointer">
-              <div className="relative aspect-3/4 overflow-hidden mb-4 rounded-sm">
+              <div className="relative aspect-3/4 overflow-hidden mb-6 rounded-sm bg-brand-accent">
                 <Image
                   src={model.image}
                   alt={model.name}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  className="object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-brand-bg/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                {/* Pearl/Gold Shimmer Overlay */}
+                <div className="absolute inset-0 bg-linear-to-tr from-brand-primary/20 via-transparent to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                <div className="absolute inset-0 border border-brand-primary/0 group-hover:border-brand-primary/20 transition-all duration-700 m-4" />
               </div>
-              <h3 className="text-lg font-medium group-hover:text-brand-primary transition-colors text-brand-text">
-                {model.name}
-              </h3>
-              <p className="text-xs text-brand-muted uppercase tracking-widest">
-                {model.category}
-              </p>
+              <div className="space-y-1">
+                <h3 className="text-xl font-serif group-hover:text-brand-primary transition-colors duration-300">
+                  {model.name}
+                </h3>
+                <div className="flex items-center gap-3">
+                  <div className="h-px w-4 bg-brand-primary/40" />
+                  <p className="text-[10px] text-brand-muted uppercase tracking-[0.2em]">
+                    {model.category}
+                  </p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
