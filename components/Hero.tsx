@@ -6,16 +6,21 @@ import { useEffect, useState } from "react";
 export default function Hero() {
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-white">
-      {/* Mesmerizing Iridescent & Shimmer Background */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 shimmer-bg opacity-50" />
+      {/* Mesmerizing Atmospheric Background */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <div className="absolute inset-0 shimmer-bg opacity-40" />
 
-        {/* Dark Circular Blurs on Edges */}
-        <div className="absolute top-1/2 -left-[10%] w-[40vw] h-[40vw] -translate-y-1/2 bg-black/5 rounded-full blur-[120px] animate-blob-float-left" />
-        <div className="absolute top-1/2 -right-[10%] w-[40vw] h-[40vw] -translate-y-1/2 bg-black/5 rounded-full blur-[120px] animate-blob-float-right" />
+        {/* Large Atmospheric Blobs - wandering across the screen */}
+        <div className="absolute top-1/4 -left-1/4 w-[70vw] h-[70vw] bg-black/18 rounded-full blur-[180px] animate-wander-1" />
+        <div className="absolute -bottom-1/4 -right-1/4 w-[60vw] h-[60vw] bg-brand-primary/16 rounded-full blur-[160px] animate-wander-2" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50vw] h-[50vw] bg-brand-accent/40 rounded-full blur-[140px] animate-wander-3" />
 
-        {/* Subtle Pearl Shimmer */}
-        <div className="absolute top-1/4 left-1/3 w-[30vw] h-[30vw] bg-brand-accent/40 rounded-full blur-[100px] animate-shimmer-1" />
+        {/* Subtle Pearl Pulses */}
+        <div className="absolute top-[10%] left-[20%] w-[25vw] h-[25vw] bg-white rounded-full blur-[100px] animate-pulse-slow" />
+        <div
+          className="absolute bottom-[10%] right-[20%] w-[30vw] h-[30vw] bg-brand-primary/5 rounded-full blur-[120px] animate-pulse-slow"
+          style={{ animationDelay: "2s" }}
+        />
       </div>
 
       {/* Content */}
@@ -62,7 +67,7 @@ export default function Hero() {
             #ffffff
           );
           background-size: 400% 400%;
-          animation: gradient-flow 15s ease infinite;
+          animation: gradient-flow 20s ease infinite;
         }
 
         @keyframes gradient-flow {
@@ -77,35 +82,60 @@ export default function Hero() {
           }
         }
 
-        @keyframes blob-float-left {
-          0%,
-          100% {
-            transform: translate(0, -50%) scale(1);
-          }
-          50% {
-            transform: translate(5%, -45%) scale(1.1);
-          }
-        }
-
-        @keyframes blob-float-right {
-          0%,
-          100% {
-            transform: translate(0, -50%) scale(1.1);
-          }
-          50% {
-            transform: translate(-5%, -55%) scale(1);
-          }
-        }
-
-        @keyframes shimmer-1 {
+        @keyframes wander-1 {
           0%,
           100% {
             transform: translate(0, 0) scale(1);
-            opacity: 0.4;
+            opacity: 0.7;
+          }
+          33% {
+            transform: translate(15vw, 15vh) scale(1.1);
+            opacity: 1;
+          }
+          66% {
+            transform: translate(5vw, -10vh) scale(0.95);
+            opacity: 0.8;
+          }
+        }
+
+        @keyframes wander-2 {
+          0%,
+          100% {
+            transform: translate(0, 0) scale(1.1);
+            opacity: 0.8;
+          }
+          33% {
+            transform: translate(-20vw, -15vh) scale(1);
+            opacity: 1;
+          }
+          66% {
+            transform: translate(-10vw, 10vh) scale(1.15);
+            opacity: 0.9;
+          }
+        }
+
+        @keyframes wander-3 {
+          0%,
+          100% {
+            transform: translate(-50%, -50%) rotate(0deg) scale(1);
           }
           50% {
-            transform: translate(-10%, 10%) scale(1.2);
-            opacity: 0.6;
+            transform: translate(-45%, -55%) rotate(180deg) scale(1.2);
+          }
+          100% {
+            transform: translate(-50%, -50%) rotate(360deg) scale(1);
+          }
+        }
+
+        @keyframes pulse-slow {
+          0%,
+          100% {
+            opacity: 0.2;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 0.5;
+            transform: scale(1.1);
           }
         }
 
