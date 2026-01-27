@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,63 +15,226 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-in-out px-6 md:px-12 py-6 ${
-        scrolled
-          ? "bg-white/80 backdrop-blur-xl py-4 shadow-[0_4px_30px_rgba(0,0,0,0.03)] border-b border-brand-primary/10"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <Link
-          href="/"
-          className={`text-2xl font-serif tracking-widest uppercase transition-all duration-300 ${
-            scrolled
-              ? "text-brand-text hover:text-brand-primary"
-              : "text-brand-text hover:text-brand-primary drop-shadow-sm"
-          }`}
-        >
-          linea<span className="italic font-light">12</span>
-        </Link>
+  // Prevent scroll when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isOpen]);
 
-        <div className="hidden md:flex items-center space-x-12 text-sm uppercase tracking-widest font-light">
+  const toggleMenu = () => setIsOpen(!isOpen);
+
+  return (
+    <>
+      <nav
+        className={`fixed top-0 left-0 right-0 z-100 transition-all duration-700 ease-in-out px-6 md:px-12 py-6 ${
+          scrolled && !isOpen
+            ? "bg-white/80 backdrop-blur-xl py-4 shadow-[0_4px_30px_rgba(0,0,0,0.03)] border-b border-brand-primary/10"
+            : "bg-transparent"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto flex justify-between items-center">
           <Link
-            href="/models"
-            className="text-brand-text/70 hover:text-brand-primary transition-colors duration-300"
+            href="/"
+            onClick={() => setIsOpen(false)}
+            className={`text-2xl font-serif tracking-[0.2em] uppercase transition-all duration-500 z-101 ${
+              isOpen ? "text-brand-text" : "text-brand-text"
+            }`}
           >
-            Models
+            linea<span className="italic font-light">12</span>
           </Link>
-          <Link
-            href="/about"
-            className="text-brand-text/70 hover:text-brand-primary transition-colors duration-300"
+
+          <button
+            onClick={toggleMenu}
+            className="relative z-101 w-8 h-8 flex flex-col justify-center items-center group cursor-pointer"
+            aria-label="Toggle Menu"
           >
-            Agency
-          </Link>
-          <Link
-            href="/journal"
-            className="text-brand-text/70 hover:text-brand-primary transition-colors duration-300"
-          >
-            Journal
-          </Link>
-          <Link
-            href="/contact"
-            className="text-brand-text/70 hover:text-brand-primary transition-colors duration-300"
-          >
-            Contact
-          </Link>
+            <span
+              className={`block w-8 h-px bg-brand-text transition-all duration-500 ease-in-out ${
+                isOpen ? "rotate-45 translate-y-px" : "mb-2"
+              }`}
+            />
+            <span
+              className={`block w-8 h-px bg-brand-text transition-all duration-500 ease-in-out ${
+                isOpen ? "opacity-0" : "mb-2"
+              }`}
+            />
+            <span
+              className={`block w-8 h-px bg-brand-text transition-all duration-500 ease-in-out ${
+                isOpen ? "-rotate-45 -translate-y-px" : ""
+              }`}
+            />
+          </button>
+        </div>
+      </nav>
+
+      {/* Fullscreen Menu Overlay */}
+      <div
+        className={`fixed inset-0 z-90 bg-[#FDFCFB] transition-all duration-700 ease-[cubic-bezier(0.85,0,0.15,1)] ${
+          isOpen ? "translate-y-0" : "-translate-y-full"
+        }`}
+      >
+        {/* Decorative Background */}
+        <div className="absolute inset-0 opacity-40 pointer-events-none">
+          <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-brand-primary/10 rounded-full blur-[120px]" />
+          <div className="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-brand-accent/50 rounded-full blur-[100px]" />
         </div>
 
-        <button
-          className={`px-6 py-2 text-[10px] uppercase tracking-[0.2em] transition-all duration-500 border ${
-            scrolled
-              ? "border-brand-primary/40 text-brand-primary hover:bg-brand-primary hover:text-white"
-              : "border-brand-primary/40 text-brand-primary hover:bg-brand-primary hover:text-white"
+        <div className="relative h-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col justify-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+            {/* Left: General Navigation */}
+            <div className="space-y-6 md:space-y-8">
+              {["Models", "Agency", "Journal", "Contact"].map((item, idx) => (
+                <div key={item} className="overflow-hidden">
+                  <Link
+                    href={`/${item.toLowerCase()}`}
+                    onClick={toggleMenu}
+                    className={`block text-4xl md:text-6xl font-serif uppercase tracking-tighter hover:text-brand-primary transition-all duration-500 ${
+                      isOpen
+                        ? "translate-y-0 opacity-100"
+                        : "translate-y-full opacity-0"
+                    }`}
+                    style={{ transitionDelay: `${idx * 100 + 400}ms` }}
+                  >
+                    {item}
+                  </Link>
+                </div>
+              ))}
+
+              <div
+                className={`pt-8 border-t border-brand-primary/10 flex gap-8 text-[10px] uppercase tracking-[0.4em] text-brand-muted transition-all duration-700 delay-700 ${
+                  isOpen
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-4"
+                }`}
+              >
+                <a
+                  href="#"
+                  className="hover:text-brand-primary transition-colors"
+                >
+                  Instagram
+                </a>
+                <a
+                  href="#"
+                  className="hover:text-brand-primary transition-colors"
+                >
+                  TikTok
+                </a>
+                <a
+                  href="#"
+                  className="hover:text-brand-primary transition-colors"
+                >
+                  Vogue
+                </a>
+              </div>
+            </div>
+
+            {/* Right: Boards */}
+            <div className="flex flex-col md:flex-row gap-16 lg:gap-22 items-start">
+              {/* Woman Board */}
+              <div
+                className={`flex-1 space-y-10 transition-all duration-1000 delay-500 ${
+                  isOpen
+                    ? "opacity-100 translate-x-0"
+                    : "opacity-0 translate-x-12"
+                }`}
+              >
+                <div className="flex items-start gap-4">
+                  <h3 className="text-6xl md:text-8xl font-serif italic font-light text-brand-text leading-none">
+                    Woman
+                  </h3>
+                  <span className="text-brand-primary font-serif text-lg md:text-xl mt-2">
+                    142
+                  </span>
+                </div>
+                <div className="flex flex-col items-start space-y-5 ml-1">
+                  <Link
+                    href="/models/woman/main-board"
+                    onClick={toggleMenu}
+                    className="group relative block text-[10px] md:text-xs uppercase tracking-[0.4em] text-brand-muted hover:text-brand-primary transition-colors"
+                  >
+                    Main Board
+                    <span className="absolute -bottom-1 left-0 w-0 h-px bg-brand-primary/40 transition-all duration-500 group-hover:w-full" />
+                  </Link>
+                  <Link
+                    href="/models/woman/development"
+                    onClick={toggleMenu}
+                    className="group relative block text-[10px] md:text-xs uppercase tracking-[0.4em] text-brand-muted hover:text-brand-primary transition-colors"
+                  >
+                    Development
+                    <span className="absolute -bottom-1 left-0 w-0 h-px bg-brand-primary/40 transition-all duration-500 group-hover:w-full" />
+                  </Link>
+                  <Link
+                    href="/models/woman"
+                    onClick={toggleMenu}
+                    className="group relative block text-[10px] md:text-xs uppercase tracking-[0.4em] text-brand-text font-medium hover:text-brand-primary transition-colors pt-2"
+                  >
+                    All Models
+                    <span className="absolute -bottom-1 left-0 w-0 h-px bg-brand-primary transition-all duration-500 group-hover:w-full" />
+                  </Link>
+                </div>
+              </div>
+
+              {/* Man Board */}
+              <div
+                className={`flex-1 space-y-10 transition-all duration-1000 delay-700 ${
+                  isOpen
+                    ? "opacity-100 translate-x-0"
+                    : "opacity-0 translate-x-12"
+                }`}
+              >
+                <div className="flex items-start gap-4">
+                  <h3 className="text-6xl md:text-8xl font-serif italic font-light text-brand-text leading-none">
+                    Man
+                  </h3>
+                  <span className="text-brand-primary font-serif text-lg md:text-xl mt-2">
+                    86
+                  </span>
+                </div>
+                <div className="flex flex-col items-start space-y-5 ml-1">
+                  <Link
+                    href="/models/man/main-board"
+                    onClick={toggleMenu}
+                    className="group relative block text-[10px] md:text-xs uppercase tracking-[0.4em] text-brand-muted hover:text-brand-primary transition-colors"
+                  >
+                    Main Board
+                    <span className="absolute -bottom-1 left-0 w-0 h-px bg-brand-primary/40 transition-all duration-500 group-hover:w-full" />
+                  </Link>
+                  <Link
+                    href="/models/man/development"
+                    onClick={toggleMenu}
+                    className="group relative block text-[10px] md:text-xs uppercase tracking-[0.4em] text-brand-muted hover:text-brand-primary transition-colors"
+                  >
+                    Development
+                    <span className="absolute -bottom-1 left-0 w-0 h-px bg-brand-primary/40 transition-all duration-500 group-hover:w-full" />
+                  </Link>
+                  <Link
+                    href="/models/man"
+                    onClick={toggleMenu}
+                    className="group relative block text-[10px] md:text-xs uppercase tracking-[0.4em] text-brand-text font-medium hover:text-brand-primary transition-colors pt-2"
+                  >
+                    All Models
+                    <span className="absolute -bottom-1 left-0 w-0 h-px bg-brand-primary transition-all duration-500 group-hover:w-full" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Shimmer Button in Menu */}
+        <div
+          className={`absolute bottom-12 right-6 md:right-12 transition-all duration-700 delay-800 ${
+            isOpen ? "opacity-100" : "opacity-0"
           }`}
         >
-          Book Talent
-        </button>
+          <button className="px-12 py-4 border border-brand-primary/30 text-[10px] uppercase tracking-[0.5em] text-brand-primary hover:bg-brand-primary hover:text-white transition-all duration-500">
+            Start a Career
+          </button>
+        </div>
       </div>
-    </nav>
+    </>
   );
 }
