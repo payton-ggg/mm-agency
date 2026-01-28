@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function Services() {
+export default function Insagram() {
   return (
     <section className="py-40 px-6 md:px-12 bg-white text-brand-text overflow-hidden relative">
       {/* Subtle background glow */}

@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import FeaturedModels from "@/components/FeaturedModels";
 import AboutUs from "@/components/AboutUs";
-import Services from "@/components/Services";
+import Insagram from "@/components/Insagram";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -11,8 +11,8 @@ export default function Home() {
       <Navbar />
       <Hero />
 
-      <Services />
       <FeaturedModels />
+      <Insagram />
 
       <Footer />
     </main>

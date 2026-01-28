@@ -22,8 +22,8 @@ export default function Hero() {
           style={{ animationDelay: "2s" }}
         />
 
-        {/* Smooth Fade-out Mask at the bottom */}
-        <div className="absolute inset-x-0 bottom-0 h-64 bg-linear-to-t from-white via-white/80 to-transparent pointer-events-none" />
+        {/* Ultra-Smooth Seamless Fade-out Mask at the bottom */}
+        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-white via-white/80 to-transparent pointer-events-none" />
       </div>
 
       {/* Content */}
