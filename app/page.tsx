@@ -10,7 +10,7 @@ export default function Home() {
     <main className="min-h-screen bg-brand-bg">
       <Navbar />
       <Hero />
-      <AboutUs />
+
       <Services />
       <FeaturedModels />
 
