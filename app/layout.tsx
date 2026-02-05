@@ -16,22 +16,33 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Elite Model Agency | High-Fashion Representation",
+  title: "Linea12 Models | Premium Model management",
   description:
-    "Representing elite fashion and commercial models worldwide. Bold presence, powerful portfolios, and professional representation for brands and talent.",
+    "Linea12 Models is a boutique model management agency representing elite fashion and commercial talent worldwide. Excellence in representation, editorial, and runway.",
   keywords: [
+    "Linea12 Models",
+    "Linea12",
     "model agency",
     "fashion models",
     "commercial models",
     "talent representation",
-    "model booking",
+    "Milan models",
+    "Paris models",
+    "London models",
   ],
-  authors: [{ name: "Elite Model Agency" }],
+  authors: [{ name: "Linea12 Models" }],
   openGraph: {
-    title: "Elite Model Agency | High-Fashion Representation",
+    title: "Linea12 Models | Premium Model Management",
     description: "Representing elite fashion and commercial models worldwide.",
+    url: "https://linea12.com",
+    siteName: "Linea12 Models",
     type: "website",
     locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Linea12 Models | Premium Model Management",
+    description: "Representing elite fashion and commercial models worldwide.",
   },
 };
 
