@@ -8,36 +8,31 @@ const works = [
     id: 1,
     title: "Vogue Editorial",
     location: "Paris, FR",
-    image:
-      "https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1976&auto=format&fit=crop",
+    image: "/models/1.png",
   },
   {
     id: 2,
     title: "The Glass Issue",
     location: "London, UK",
-    image:
-      "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=1974&auto=format&fit=crop",
+    image: "/models/2.png",
   },
   {
     id: 3,
     title: "Velvet Dreams",
     location: "Milan, IT",
-    image:
-      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=2040&auto=format&fit=crop",
+    image: "/models/3.png",
   },
   {
     id: 4,
     title: "Nordic Minimal",
     location: "Stockholm, SE",
-    image:
-      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=2040&auto=format&fit=crop",
+    image: "/models/4.png",
   },
   {
     id: 5,
     title: "Neo-Classic",
     location: "New York, USA",
-    image:
-      "https://images.unsplash.com/photo-1581044777550-4cfa60707c03?q=80&w=1972&auto=format&fit=crop",
+    image: "/models/5.png",
   },
 ];
 

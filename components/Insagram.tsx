@@ -1,82 +1,102 @@
 import Image from "next/image";
+import Link from "next/link";
+
+const instagramPosts = [
+  {
+    id: 1,
+    image: "/models/1.png",
+    link: "https://www.instagram.com/linea12models/",
+  },
+  {
+    id: 2,
+    image: "/models/2.png",
+    link: "https://www.instagram.com/linea12models/",
+  },
+  {
+    id: 3,
+    image: "/models/3.png",
+    link: "https://www.instagram.com/linea12models/",
+  },
+  {
+    id: 4,
+    image: "/models/4.png",
+    link: "https://www.instagram.com/linea12models/",
+  },
+  {
+    id: 5,
+    image: "/models/5.png",
+    link: "https://www.instagram.com/linea12models/",
+  },
+  {
+    id: 6,
+    image: "/models/6.png",
+    link: "https://www.instagram.com/linea12models/",
+  },
+];
 
 export default function Insagram() {
   return (
-    <section className="py-40 px-6 md:px-12 bg-white text-brand-text overflow-hidden relative">
-      {/* Subtle background glow */}
-      <div className="absolute -bottom-24 -left-24 w-full h-full bg-brand-primary/5 blur-[150px] rounded-full pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-32 items-center">
-        <div className="relative">
-          <div className="relative aspect-3/4 w-full max-w-md mx-auto z-10 overflow-hidden shadow-2xl">
-            <Image
-              src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=2040&auto=format&fit=crop"
-              alt="Editorial Modeling"
-              fill
-              className="object-cover scale-105 hover:scale-100 transition-transform duration-1000"
-            />
-            <div className="absolute inset-0 bg-linear-to-t from-brand-primary/20 via-transparent to-transparent opacity-40" />
+    <section className="py-32 bg-white text-brand-text overflow-hidden relative">
+      <div className="w-full">
+        {/* Header */}
+        <Link
+          href="https://www.instagram.com/linea12models/"
+          target="_blank"
+          className="flex flex-col items-center justify-center mb-24 group px-6"
+        >
+          <div className="flex items-center gap-4 mb-4">
+            <svg
+              className="w-10 h-10 text-brand-text group-hover:text-brand-primary transition-colors duration-500"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+            <h2 className="text-4xl md:text-5xl font-serif text-brand-text group-hover:text-brand-primary transition-colors duration-500">
+              instagram
+            </h2>
           </div>
-          {/* Decorative elements */}
-          <div className="absolute top-12 -left-12 w-full h-full border border-brand-primary/10 z-0 hidden md:block" />
-          <div className="absolute -bottom-16 -right-16 w-64 h-80 bg-brand-primary/5 z-0 blur-2xl hidden md:block" />
+          <span className="text-[10px] uppercase tracking-[0.6em] text-brand-muted font-medium group-hover:text-brand-primary transition-all duration-500 group-hover:tracking-[0.8em]">
+            @linea12models
+          </span>
+        </Link>
+
+        {/* Post Grid - FULL WIDTH */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-1 md:gap-2">
+          {instagramPosts.map((post) => (
+            <Link
+              key={post.id}
+              href={post.link}
+              target="_blank"
+              className="relative aspect-square overflow-hidden group bg-brand-accent shadow-sm"
+            >
+              <Image
+                src={post.image}
+                alt={`Instagram post ${post.id}`}
+                fill
+                className="object-cover transition-transform duration-1000 ease-out group-hover:scale-110"
+              />
+              {/* Pearl/Gold Shimmer Overlay */}
+              <div className="absolute inset-0 bg-linear-to-tr from-brand-primary/20 via-transparent to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+            </Link>
+          ))}
         </div>
 
-        <div>
-          <span className="text-[10px] uppercase tracking-[0.5em] text-brand-primary mb-6 block font-medium">
-            Our Expertise
-          </span>
-          <h2 className="text-5xl md:text-8xl font-serif mb-16 leading-[1.1] text-brand-text">
-            High <span className="italic font-light">Fashion</span> <br />
-            To Commercial
-          </h2>
-
-          <div className="space-y-16">
-            <div className="group cursor-default">
-              <div className="flex items-center gap-8 mb-4">
-                <span className="text-brand-primary/40 text-sm font-serif group-hover:text-brand-primary transition-colors duration-500">
-                  01
-                </span>
-                <h3 className="text-2xl font-serif tracking-widest group-hover:translate-x-2 transition-all duration-500 group-hover:text-brand-primary italic">
-                  Runway
-                </h3>
-              </div>
-              <p className="text-brand-muted font-light max-w-sm ml-16 text-sm leading-relaxed">
-                Placing talent on the most prestigious runways from Milan to New
-                York, sculpting the faces of tomorrow.
-              </p>
-            </div>
-
-            <div className="group cursor-default">
-              <div className="flex items-center gap-8 mb-4">
-                <span className="text-brand-primary/40 text-sm font-serif group-hover:text-brand-primary transition-colors duration-500">
-                  02
-                </span>
-                <h3 className="text-2xl font-serif tracking-widest group-hover:translate-x-2 transition-all duration-500 group-hover:text-brand-primary italic">
-                  Editorial
-                </h3>
-              </div>
-              <p className="text-brand-muted font-light max-w-sm ml-16 text-sm leading-relaxed">
-                Securing covers and spreads in leading global fashion
-                publications, creating iconic visual legacies.
-              </p>
-            </div>
-
-            <div className="group cursor-default">
-              <div className="flex items-center gap-8 mb-4">
-                <span className="text-brand-primary/40 text-sm font-serif group-hover:text-brand-primary transition-colors duration-500">
-                  03
-                </span>
-                <h3 className="text-2xl font-serif tracking-widest group-hover:translate-x-2 transition-all duration-500 group-hover:text-brand-primary italic">
-                  Digital
-                </h3>
-              </div>
-              <p className="text-brand-muted font-light max-w-sm ml-16 text-sm leading-relaxed">
-                Managing social presence and digital campaigns for the modern
-                era, navigating the intersection of tech and style.
-              </p>
-            </div>
-          </div>
+        {/* Follow Button */}
+        <div className="mt-24 flex justify-center px-6">
+          <Link
+            href="https://www.instagram.com/linea12models/"
+            target="_blank"
+            className="px-12 py-4 border border-brand-primary/30 text-[10px] uppercase tracking-[0.5em] text-brand-text hover:bg-brand-primary hover:text-white transition-all duration-500 rounded-xs"
+          >
+            Follow our journey
+          </Link>
         </div>
       </div>
     </section>
